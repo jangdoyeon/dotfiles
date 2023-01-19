@@ -30,3 +30,4 @@ linkDotfile .vimrc
 linkDotfile .tmux.conf
 linkDotfile .zimrc
 linkDotfile .zshrc
+linkDotfile .tmux.conf.local

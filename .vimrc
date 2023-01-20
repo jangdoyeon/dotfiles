@@ -29,6 +29,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " List ends here. Plugins become visible to Vim after this call.
 " vim json
 Plug 'elzr/vim-json'
+
+" coc
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'stephpy/vim-yaml'
+
 call plug#end()
 
 " add yaml stuffs

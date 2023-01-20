@@ -248,3 +248,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$(go env GOPATH)"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# aws autocomplete
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws

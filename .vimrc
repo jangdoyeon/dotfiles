@@ -31,6 +31,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elzr/vim-json'
 call plug#end()
 
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab et cc=1,3,5
+
+""" Customize Coc colors
+func! s:my_colors_setup() abort
+    " this is an example
+    hi  CocMenuSel ctermbg=darkgrey
+endfunc
+
+augroup colorscheme_coc_setup | au!
+    au ColorScheme * call s:my_colors_setup()
+augroup END
+
 " golang highlight
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1

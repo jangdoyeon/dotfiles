@@ -240,17 +240,27 @@ fzf
 alias python="python3"
 alias mt="multipass"
 alias gs="git status"
+alias k="kubectl"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
 # golang
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$(go env GOPATH)"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
 # home/bin 
 export PATH=$PATH:$HOME/bin
+
 # aws autocomplete
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
+
+# kubectl autocomplete
+source <(kubectl completion zsh)
+
+

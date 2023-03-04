@@ -2,6 +2,10 @@ set number
 set ignorecase    " when search
 set hlsearch    " highlight when search
 set showmatch    " show brackets matched
+set title           " 현재 작업중인 파일 이름을 표시합니다.
+set titlestring=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set termguicolors
+
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
@@ -12,6 +16,7 @@ Plug 'thaerkh/vim-indentguides'
 "Plug 'davidhalter/jedi-vim'
 " Plug 'morhetz/gruvbox'
 Plug 'junegunn/seoul256.vim'
+Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
 Plug 'jacoborus/tender.vim'
 Plug 'scrooloose/nerdtree'
@@ -46,6 +51,7 @@ autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab et cc=1,3,5
 func! s:my_colors_setup() abort
     " this is an example
     hi  CocMenuSel ctermbg=darkgrey
+    hi  CocFadeOut ctermfg=248 guifg=#999999 
 endfunc
 
 augroup colorscheme_coc_setup | au!
@@ -53,19 +59,19 @@ augroup colorscheme_coc_setup | au!
 augroup END
 
 " golang highlight
-"let g:go_highlight_types = 1
-"let g:go_highlight_fields = 1
-"let g:go_highlight_functions = 1
-"let g:go_highlight_function_calls = 1
-"let g:go_highlight_extra_types = 1
-"let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
 "
 " Auto formatting and importing
-"let g:go_fmt_autosave = 1
-"let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 
 " Status line types/signatures
-"let g:go_auto_type_info = 1
+let g:go_auto_type_info = 1
 
 " NERDTree show hidden file
 let NERDTreeShowHidden=1
@@ -76,7 +82,7 @@ let NERDTreeShowHidden=1
 " fix coc.nvim box color
 highlight Pmenu ctermbg=black ctermfg=yellow
 
-autocmd vimenter * ++nested colorscheme seoul256
+autocmd vimenter * ++nested colorscheme gruvbox
 map <C-n> : NERDTreeToggle<CR>
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format

@@ -44,6 +44,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'stephpy/vim-yaml'
 
+" vim comment
+Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 " coc.nvim 설정

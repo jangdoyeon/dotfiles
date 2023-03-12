@@ -43,6 +43,17 @@ Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
+" coc.nvim 설정
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ ]
+
+" TypeScript, JavaScript 파일에서 coc-tsserver 사용 설정
+autocmd FileType typescript,json,javascript,jsx,tsx setl formatoptions-=cro
+
+
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
+
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab et cc=1,3,5

@@ -242,6 +242,10 @@ alias mt="multipass"
 alias gs="git status"
 alias k="kubectl"
 
+# usefule cli tools setup
+alias td="tldr" # too long don't read
+
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
@@ -263,4 +267,6 @@ complete -C '/usr/local/bin/aws_completer' aws
 # kubectl autocomplete
 source <(kubectl completion zsh)
 
+# open vscode 
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 

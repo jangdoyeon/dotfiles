@@ -1,3 +1,6 @@
+" gruvbox dark mode
+set background=dark
+set t_Co=256
 set number
 set ignorecase    " when search
 set hlsearch    " highlight when search
@@ -68,6 +71,8 @@ endfunc
 augroup colorscheme_coc_setup | au!
     au ColorScheme * call s:my_colors_setup()
 augroup END
+
+let g:gruvbox_contrast_dark = "soft"
 
 " golang highlight
 let g:go_highlight_types = 1

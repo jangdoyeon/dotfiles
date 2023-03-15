@@ -7,8 +7,9 @@ set hlsearch    " highlight when search
 set showmatch    " show brackets matched
 set title           " 현재 작업중인 파일 이름을 표시합니다.
 set titlestring=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set termguicolors
-
+if empty($TMUX)
+  set termguicolors
+endif
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')

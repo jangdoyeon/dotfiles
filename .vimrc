@@ -45,7 +45,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'stephpy/vim-yaml'
 
+" vim comment
+Plug 'tpope/vim-commentary'
+
 call plug#end()
+
+" coc.nvim 설정
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ ]
+
+" TypeScript, JavaScript 파일에서 coc-tsserver 사용 설정
+autocmd FileType typescript,json,javascript,jsx,tsx setl formatoptions-=cro
+
+
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
 
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml

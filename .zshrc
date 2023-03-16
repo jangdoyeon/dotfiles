@@ -245,6 +245,8 @@ alias k="kubectl"
 # usefule cli tools setup
 alias td="tldr" # too long don't read
 
+# ipcalc
+alias ipc="ipcalc"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

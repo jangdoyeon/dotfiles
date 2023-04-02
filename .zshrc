@@ -247,6 +247,8 @@ alias td="tldr" # too long don't read
 
 # ipcalc
 alias ipc="ipcalc"
+# incidr
+alias inc="incidr"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

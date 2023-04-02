@@ -245,9 +245,9 @@ alias k="kubectl"
 # usefule cli tools setup
 alias td="tldr" # too long don't read
 
-# ipcalc
+# ipcalc - subnet calcuration tool
 alias ipc="ipcalc"
-# incidr
+# incidr - check ip if in cidr
 alias inc="incidr"
 
 # fzf
@@ -274,3 +274,9 @@ source <(kubectl completion zsh)
 # open vscode 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
+# check host os for open vscode
+# if [[ "$(uname)" == "Darwin" ]]; then
+#   code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+# else
+#   code () { VSCODE_CWD="$PWD" xdg-open -n -b "com.microsoft.VSCode" --args $* ;}
+# fi

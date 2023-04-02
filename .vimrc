@@ -38,6 +38,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " List ends here. Plugins become visible to Vim after this call.
 " vim json
 Plug 'elzr/vim-json'
+Plug 'christoomey/vim-tmux-navigator'
 
 " coc
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

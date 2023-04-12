@@ -8,6 +8,7 @@ set showmatch    " show brackets matched
 set title           " show current working file name
 set titlestring=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set foldmethod=indent " code block fold 
+set foldlevel=20 " fold level
 set mouse=a " enable mouse mode on vim
 set ballooneval " enable moving cursor between pane
 
@@ -281,5 +282,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 " All Fold toggle
-nnoremap <leader>z :execute 'normal! zM'<bar>:let @/=''<cr>
 nnoremap <leader>Z :execute 'normal! zR'<bar>:let @/=''<cr>
+nnoremap <leader>z :execute 'normal! zM'<bar>:let @/=''<cr>

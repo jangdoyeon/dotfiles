@@ -7,6 +7,8 @@ set hlsearch    " highlight when search
 set showmatch    " show brackets matched
 set title           " 현재 작업중인 파일 이름을 표시합니다.
 set titlestring=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set foldmethod=indent
+
 if empty($TMUX)
   set termguicolors
 endif
@@ -272,3 +274,10 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+" All Fold toggle
+nnoremap <leader>z :execute 'normal! zM'<bar>:let @/=''<cr>
+nnoremap <leader>Z :execute 'normal! zR'<bar>:let @/=''<cr>

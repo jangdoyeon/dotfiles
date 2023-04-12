@@ -5,9 +5,11 @@ set number
 set ignorecase    " when search
 set hlsearch    " highlight when search
 set showmatch    " show brackets matched
-set title           " 현재 작업중인 파일 이름을 표시합니다.
+set title           " show current working file name
 set titlestring=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set foldmethod=indent
+set foldmethod=indent " code block fold 
+set mouse=a " enable mouse mode on vim
+set ballooneval " enable moving cursor between pane
 
 if empty($TMUX)
   set termguicolors

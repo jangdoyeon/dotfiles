@@ -241,14 +241,18 @@ alias python="python3"
 alias mt="multipass"
 alias gs="git status"
 alias k="kubectl"
-
 # usefule cli tools setup
 alias td="tldr" # too long don't read
-
 # ipcalc - subnet calcuration tool
 alias ipc="ipcalc"
 # incidr - check ip if in cidr
 alias inc="incidr"
+# aws-vault
+alias av="aws-vault"
+alias ave="aws-vault exec"
+alias ava="aws-vault add"
+# steampipe query
+alias stq="steampipe query"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -258,7 +262,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # golang
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$(go env GOPATH)"
-export PATH="$PATH:$(go env GOPATH)/bin"
+export GOBIN=$GOPATH/bin
+export PATH="$PATH:$(go env GOPATH)/bin:$GOBIN"
 
 # home/bin 
 export PATH=$PATH:$HOME/bin
@@ -280,3 +285,4 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 # else
 #   code () { VSCODE_CWD="$PWD" xdg-open -n -b "com.microsoft.VSCode" --args $* ;}
 # fi
+export PATH=/opt/homebrew/bin:$PATH

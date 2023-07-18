@@ -253,6 +253,11 @@ alias ave="aws-vault exec"
 alias ava="aws-vault add"
 # steampipe query
 alias stq="steampipe query"
+alias avs="aws-vault exec doyeon -- steampipe query --output csv"
+# kubectx
+alias kx="kubectx"
+# kubens
+alias kn="kubens"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -267,6 +272,10 @@ export PATH="$PATH:$(go env GOPATH)/bin:$GOBIN"
 
 # home/bin 
 export PATH=$PATH:$HOME/bin
+
+# kubeconfig
+export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config-stg.yaml:/$HOME/.kube/config-prod.yaml:/$HOME/.kube/config-local.yaml
+
 
 # aws autocomplete
 autoload bashcompinit && bashcompinit
@@ -286,3 +295,4 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 #   code () { VSCODE_CWD="$PWD" xdg-open -n -b "com.microsoft.VSCode" --args $* ;}
 # fi
 export PATH=/opt/homebrew/bin:$PATH
+fpath=(/custom/completions /Users/jangdoyeon/.zim/modules/git/functions /Users/jangdoyeon/.zim/modules/utility/functions /Users/jangdoyeon/.zim/modules/zim-kubectl/functions /Users/jangdoyeon/.zim/modules/zim-k9s/functions /Users/jangdoyeon/.zim/modules/zim-rtx/functions /Users/jangdoyeon/.zim/modules/zim-steampipe/functions /Users/jangdoyeon/.zim/modules/zim-yq/functions /Users/jangdoyeon/.zim/modules/duration-info/functions /Users/jangdoyeon/.zim/modules/git-info/functions /Users/jangdoyeon/.zim/modules/zsh-completions/src /Users/jangdoyeon/.zim/modules/git/functions /Users/jangdoyeon/.zim/modules/utility/functions /Users/jangdoyeon/.zim/modules/zim-kubectl/functions /Users/jangdoyeon/.zim/modules/zim-k9s/functions /Users/jangdoyeon/.zim/modules/zim-rtx/functions /Users/jangdoyeon/.zim/modules/zim-steampipe/functions /Users/jangdoyeon/.zim/modules/zim-yq/functions /Users/jangdoyeon/.zim/modules/duration-info/functions /Users/jangdoyeon/.zim/modules/git-info/functions /Users/jangdoyeon/.zim/modules/zsh-completions/src /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8.1/functions)

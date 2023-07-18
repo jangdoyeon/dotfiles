@@ -102,6 +102,9 @@ let g:go_auto_type_info = 1
 " NERDTree show hidden file
 let NERDTreeShowHidden=1
 
+" coc-sql formatter disable
+let g:coc_sql_format_enable = 0
+
 " go autocomplete
 "au filetype go inoremap <buffer> . .<C-x><C-o>
 

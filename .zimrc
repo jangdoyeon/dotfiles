@@ -24,6 +24,18 @@ zmodule fzf
 # https://github.com/ael-code/zsh-colored-man-pages.git
 zmodule https://github.com/ael-code/zsh-colored-man-pages.git
 
+# kubectl
+zmodule joke/zim-kubectl
+
+# k9s
+zmodule joke/zim-k9s
+
+zmodule joke/zim-rtx
+
+zmodule joke/zim-steampipe
+
+zmodule joke/zim-yq
+
 #
 # Prompt
 #

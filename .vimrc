@@ -5,8 +5,13 @@ set number
 set ignorecase    " when search
 set hlsearch    " highlight when search
 set showmatch    " show brackets matched
-set title           " 현재 작업중인 파일 이름을 표시합니다.
+set title           " show current working file name
 set titlestring=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set foldmethod=indent " code block fold 
+set foldlevel=20 " fold level
+set mouse=a " enable mouse mode on vim
+set ballooneval " enable moving cursor between pane
+
 if empty($TMUX)
   set termguicolors
 endif
@@ -96,6 +101,9 @@ let g:go_auto_type_info = 1
 
 " NERDTree show hidden file
 let NERDTreeShowHidden=1
+
+" coc-sql formatter disable
+let g:coc_sql_format_enable = 0
 
 " go autocomplete
 "au filetype go inoremap <buffer> . .<C-x><C-o>
@@ -272,3 +280,10 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+" All Fold toggle
+nnoremap <leader>Z :execute 'normal! zR'<bar>:let @/=''<cr>
+nnoremap <leader>z :execute 'normal! zM'<bar>:let @/=''<cr>

@@ -241,12 +241,23 @@ alias python="python3"
 alias mt="multipass"
 alias gs="git status"
 alias k="kubectl"
-
 # usefule cli tools setup
 alias td="tldr" # too long don't read
-
-# ipcalc
+# ipcalc - subnet calcuration tool
 alias ipc="ipcalc"
+# incidr - check ip if in cidr
+alias inc="incidr"
+# aws-vault
+alias av="aws-vault"
+alias ave="aws-vault exec"
+alias ava="aws-vault add"
+# steampipe query
+alias stq="steampipe query"
+alias avs="aws-vault exec doyeon -- steampipe query --output csv"
+# kubectx
+alias kx="kubectx"
+# kubens
+alias kn="kubens"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -256,10 +267,15 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # golang
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$(go env GOPATH)"
-export PATH="$PATH:$(go env GOPATH)/bin"
+export GOBIN=$GOPATH/bin
+export PATH="$PATH:$(go env GOPATH)/bin:$GOBIN"
 
 # home/bin 
 export PATH=$PATH:$HOME/bin
+
+# kubeconfig
+export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config-stg.yaml:/$HOME/.kube/config-prod.yaml:/$HOME/.kube/config-local.yaml
+
 
 # aws autocomplete
 autoload bashcompinit && bashcompinit
@@ -272,8 +288,11 @@ source <(kubectl completion zsh)
 # open vscode 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-# pyenv setting up
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
+# check host os for open vscode
+# if [[ "$(uname)" == "Darwin" ]]; then
+#   code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+# else
+#   code () { VSCODE_CWD="$PWD" xdg-open -n -b "com.microsoft.VSCode" --args $* ;}
+# fi
+export PATH=/opt/homebrew/bin:$PATH
+fpath=(/custom/completions /Users/jangdoyeon/.zim/modules/git/functions /Users/jangdoyeon/.zim/modules/utility/functions /Users/jangdoyeon/.zim/modules/zim-kubectl/functions /Users/jangdoyeon/.zim/modules/zim-k9s/functions /Users/jangdoyeon/.zim/modules/zim-rtx/functions /Users/jangdoyeon/.zim/modules/zim-steampipe/functions /Users/jangdoyeon/.zim/modules/zim-yq/functions /Users/jangdoyeon/.zim/modules/duration-info/functions /Users/jangdoyeon/.zim/modules/git-info/functions /Users/jangdoyeon/.zim/modules/zsh-completions/src /Users/jangdoyeon/.zim/modules/git/functions /Users/jangdoyeon/.zim/modules/utility/functions /Users/jangdoyeon/.zim/modules/zim-kubectl/functions /Users/jangdoyeon/.zim/modules/zim-k9s/functions /Users/jangdoyeon/.zim/modules/zim-rtx/functions /Users/jangdoyeon/.zim/modules/zim-steampipe/functions /Users/jangdoyeon/.zim/modules/zim-yq/functions /Users/jangdoyeon/.zim/modules/duration-info/functions /Users/jangdoyeon/.zim/modules/git-info/functions /Users/jangdoyeon/.zim/modules/zsh-completions/src /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8.1/functions)

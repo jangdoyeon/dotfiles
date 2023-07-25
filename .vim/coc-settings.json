@@ -1,4 +1,5 @@
 {
+  "list.height": 100,
   "pyright.inlayHints.variableTypes": false,
   "python.pythonPath": "./.venv/bin/python",
   "python.venvPath": "./.venv",

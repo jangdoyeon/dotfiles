@@ -11,6 +11,7 @@ set foldmethod=indent " code block fold
 set foldlevel=20 " fold level
 set mouse=a " enable mouse mode on vim
 set ballooneval " enable moving cursor between pane
+set clipboard=unnamedplus " system clipboard sync
 
 if empty($TMUX)
   set termguicolors
